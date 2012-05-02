@@ -2,8 +2,9 @@ Clean-Code-Method-Sorter
 ========================
 
 The Clean Code Method Sorter is a lightweight plugin for the Eclipse Platform.
+It sorts Java methods to improve the readability of your source code following the *newspaper metaphor* (conceived by Robert C. Martin): 
 
-It sorts Java methods to improve the readability of your source code following the *newspaper metaphor* (conceived by Robert C. Martin): _A class should be readable like a newspaper, with the most important methods being at the beginning of the class, followed by methods which are invoked later in the execution flow._
+_A class should be readable like a newspaper, with the most important methods being at the beginning of the class, followed by methods which are invoked later in the execution flow._
 
 The plugin lets you sort using the following criteria:
 
