@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+<!-- Preferences-->
+<extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            name="Clean Code Method Sorter"
+            class="com.github.parzonka.ccms.preferences.PreferencePage"
+            id="com.github.parzonka.ccms.preferences.CleanCodeMethodSorter">
+      </page>
+</extension>
+   
+<extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="com.github.parzonka.ccms.preferences.PreferenceInitializer">
+      </initializer>
+</extension>
+   
+<!-- Menus -->
+<extension
+      point="org.eclipse.ui.menus">
+    
+   <menuContribution
+         allPopups="true"
+         locationURI="popup:org.eclipse.jdt.ui.source.menu?before=generateGroup">
+      <command
+            commandId="com.github.parzonka.ccms.ccms2"
+            id="com.github.parzonka.ccms.actions.CCMS2"
+            label="Sort Methods..."
+            mnemonic="Clean Code Method Sorter"
+            style="push">
+      </command>
+      <command
+	        commandId="com.github.parzonka.ccms.randomsorter"
+	        id="com.github.parzonka.ccms.actions.randomsorter"
+	        label="Shuffle Methods Randomly..."
+	        mnemonic="Random Method Shuffler"
+	        style="push">
+ 	  </command>
+   	</menuContribution>
+   	   
+</extension>
+
+<!-- Add to Source Menu -->
+<extension
+      point="org.eclipse.ui.actionSets">
+   <actionSet
+         id="com.github.parzonka.ccms.actionSet"
+         label="Clean Code Method Sorter"
+         visible="true">
+      <action
+            class="com.github.parzonka.ccms.handler.SorterAction"
+            id="com.github.parzonka.ccms.actions.MethodSorterAction"
+            definitionId="com.github.parzonka.ccms.commands.sortMethods"
+            label="&amp;Sort Methods..."
+            menubarPath="org.eclipse.jdt.ui.source.menu/importGroup">
+      </action>
+   </actionSet>
+</extension>
+
+<!-- Commands -->
+<extension
+    	point="org.eclipse.ui.commands">
+    	
+   	<command
+         defaultHandler="com.github.parzonka.ccms.handler.BatchProcessingHandler"
+         id="com.github.parzonka.ccms.ccms2"
+         name="Clean Code Method Sort">
+   	</command>
+   	
+	<command
+         defaultHandler="com.github.parzonka.ccms.handler.RandomMethodSorterHandler"
+         id="com.github.parzonka.ccms.randomsorter"
+         name="Random Method Shuffler">
+   </command>
+ <category
+       id="com.github.parzonka.ccms.commands.category"
+       name="Clean Code">
+ </category>
+ <command
+       categoryId="com.github.parzonka.ccms.commands.category"
+       id="com.github.parzonka.ccms.commands.sortMethods"
+       name="Sort Methods...">
+ </command>
+   
+</extension>
+<extension
+      point="org.eclipse.ui.handlers">
+   <handler
+         class="com.github.parzonka.ccms.handler.SingleUnitHandler"
+         commandId="com.github.parzonka.ccms.commands.sortMethods">
+   </handler>
+</extension>
+<extension
+      point="org.eclipse.ui.bindings">
+   <key
+         commandId="com.github.parzonka.ccms.commands.sortMethods"
+         contextId="org.eclipse.ui.contexts.window"
+         schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+         sequence="M3+S">
+   </key>
+</extension>
+
+</plugin>

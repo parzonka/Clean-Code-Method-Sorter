@@ -1,0 +1,6 @@
+ccms/bin/
+ccms/.DS_Store
+ccms_updatesite/artifacts.jar
+ccms_updatesite/content.jar
+ccms_updatesite/features*
+ccms_updatesite/plugins*

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <description name="Clean Code Method Sorter">
+      The Clean Code Method Sorter is a lightweight plugin for the Eclipse Platform. It provides techniques to sort methods in Java-classes, aiming to increase the readability of the source code.
+   </description>
+   <feature url="features/ccms_feature_1.0.0.qualifier.jar" id="ccms_feature" version="1.0.0.qualifier"/>
+</site>
