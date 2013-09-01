@@ -13,7 +13,7 @@ The plugin lets you sort using the following criteria:
  * method name (aka overloaded method)
  * being accessor/mutator of the same field (aka getter and setters)
 
-To install, please use add this [update site](http://parzonka.com/tud/ccms) to your Eclipse.
-(Note that this link wil not show any content in your browser.)
+To install, please add this [update site](http://parzonka.com/tud/ccms) to your Eclipse.
+(Note that this link will not show any content in your browser.)
 
 For further information on usage, please refer to the manual at [eclipse.org](http://wiki.eclipse.org/Recommenders/CleanCodeMethodSorter).
